@@ -2,8 +2,8 @@ import javax.swing.*;
 
 public class SimpleGui2{ 
     public SimpleGui2() {
-        JFrame frame = new JFrame();
-        ImagePanel panel = new ImagePanel();
+        JFrame frame = new JFrame();// new j frame created
+        ImagePanel panel = new ImagePanel();// new image panel created
  
         //JLabel label = new JLabel("Swing is pretty cool");
 
