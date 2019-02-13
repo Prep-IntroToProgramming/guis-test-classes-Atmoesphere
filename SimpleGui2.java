@@ -11,7 +11,7 @@ public class SimpleGui2{
         frame.add(panel);
         //frame.add(panel2);
         //frame.add(label);
-        frame.setSize(300, 300);
+        frame.setSize(panel.logo.getIconWidth()+20,panel.logo.getIconHeight()+45);
         frame.setVisible(true);
     }
 
