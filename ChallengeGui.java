@@ -1,4 +1,4 @@
- 
+
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
@@ -18,14 +18,15 @@ public class ChallengeGui implements ActionListener{
         button1.addActionListener(new ButtonOneListener());
         button2.addActionListener(new ButtonTwoListener());
     }
+
     class ButtonOneListener implements ActionListener{
         public void actionPerformed(ActionEvent e){
-            button1.setText("hi button 1");
+            button1.setText("Wuts gucci button 1");
         }
     }
     class ButtonTwoListener implements ActionListener{
         public void actionPerformed(ActionEvent e){
-            button2.setText("hi button 2");
+            button2.setText("yo button 2, ayy vro");
         }
     }
     public static void main(String[] args){
@@ -36,7 +37,6 @@ public class ChallengeGui implements ActionListener{
         button1.setText("hi");
     }
     
+    
 }
-	
-	
-	
+    

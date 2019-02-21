@@ -22,7 +22,6 @@ public class SimpleGuiTwoComps implements ActionListener{
         frame.repaint();
     }
 
-
     public static void main(String[] args){
         SimpleGuiTwoComps x = new SimpleGuiTwoComps();
     }

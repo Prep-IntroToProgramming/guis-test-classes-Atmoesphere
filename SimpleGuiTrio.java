@@ -18,12 +18,12 @@ public class SimpleGuiTrio implements ActionListener{
         frame.setSize(500,500);
         frame.add(BorderLayout.CENTER, label);
         frame.setVisible(true);
-        
+
         button1.addActionListener(new ButtonOneListener());
         button2.addActionListener(new ButtonTwoListener());
     }
-    class ButtonOneListener implements ActionListener{
-        public void actionPerformed(ActionEvent e){
+    class ButtonOneListener implements ActionListener{ //inner class in order to create dual action listeners 
+        public void actionPerformed(ActionEvent e){// 1st action listener created
             String text = label.getText();
             String[] array = text.split(" ");
             array[0] = "peace "; 
@@ -31,12 +31,12 @@ public class SimpleGuiTrio implements ActionListener{
             //button1.setText("hi button 1");
         }
     }
-    class ButtonTwoListener implements ActionListener{
-        public void actionPerformed(ActionEvent e){
+    class ButtonTwoListener implements ActionListener{// inner class
+        public void actionPerformed(ActionEvent e){//2nd action listener created
             String text = label.getText();
             String[] array = text.split(" ");
             array[1] = " foo"; 
-            label.setText(array[0]+array[1]);
+            label.setText(array[0]+array[1]);// array of text
             //button2.setText("hi button 2");
         }
     }
@@ -47,8 +47,7 @@ public class SimpleGuiTrio implements ActionListener{
     public void actionPerformed(ActionEvent e){
         button1.setText("hi");
     }
-    
+
 }
-    
-    
+
     
