@@ -27,7 +27,7 @@ public class SimpleGui1B implements ActionListener{
         if (clicks == 8){
             System.out.println("thats my fav number");
         }
-        
+
     }
 
     public static void main(String[] args) {
