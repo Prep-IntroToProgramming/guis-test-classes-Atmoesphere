@@ -5,7 +5,7 @@ import javax.swing.event.*;
 import java.awt.*; 
 import java.awt.event.*; 
 
-class ListDemo {  
+class ListDemo2 {  
 
     JList<String> list; //new
     JLabel label; //old
@@ -13,14 +13,14 @@ class ListDemo {
 
     String names[] = {"David", "Isabella", "Matt", "Ty", "Kim", "Lawrence", "Sean"}; //old
 
-    ListDemo() {  
+    ListDemo2() {  
         JFrame frame = new JFrame("JList Demo");  
         frame.setLayout(new FlowLayout());  
         frame.setSize(200, 160);  
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
 
         list = new JList<String>(names); 
-        list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); //new
+        list.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION); //new
         list.addListSelectionListener(new ListListener()); //new
 
         scroller = new JScrollPane(list); 
@@ -34,22 +34,28 @@ class ListDemo {
     }  
 
     public static void main(String args[]) {  
-        ListDemo ld = new ListDemo();    
+        ListDemo2 ld = new ListDemo2();    
     }  
 
     class ListListener implements ListSelectionListener {//new
         public void valueChanged(ListSelectionEvent le) {  
-            int index = list.getSelectedIndex(); //new
-
-            if(index != -1) {
-                //label.setText("Current selection: " + names[index]);
-                System.out.println("Current selection: " + names[index]);
-            }else{  
-                label.setText("Please choose an name"); 
+            int[] index = list.getSelectedIndices(); //new
+            String labelvalue = " ";
+            for (int i: index){
+                labelvalue = labelvalue +" "+ names[i];
+            }
+            if(!le.getValueIsAdjusting()) {
+                label.setText("Current selection(s): " + labelvalue);
+                if(index.length==7){
+                    JFrame frame = new JFrame();
+                    ImagePanel panel = new ImagePanel();
+                    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    frame.add(panel);
+                    frame.setSize(panel.logo.getIconWidth()+20,panel.logo.getIconHeight()+45);
+                    frame.setVisible(true);
+                }
             }
         }
     }
 }
 
-// 1 element can be selected you can change this
-// the swing componenets
